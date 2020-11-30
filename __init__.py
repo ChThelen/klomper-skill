@@ -7,6 +7,7 @@ class Klomper(MycroftSkill):
 
     @intent_file_handler('klomper.intent')
     def handle_klomper(self, message):
+        self.log.info("this is my first skill!", message)
         self.speak_dialog('klomper')
 
 
