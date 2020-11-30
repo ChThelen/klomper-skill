@@ -5,10 +5,15 @@ class Klomper(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
 
-    @intent_file_handler('klomper.intent')
-    def handle_klomper(self, message):
-        self.log.info("this is my first skill!", message)
-        self.speak_dialog('klomper')
+    @intent_file_handler('klomper-occupied.intent')
+    def handle_occupied(self, message):
+        self.log.info("set red light", message)
+        self.speak_dialog('klomper-occupied')
+
+    @intent_file_handler('klomper-free.intent')
+    def handle_free(self, message):
+        self.log.info("set green light", message)
+        self.speak_dialog('klomper-free')
 
 
 def create_skill():
