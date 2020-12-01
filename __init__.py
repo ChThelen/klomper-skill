@@ -7,12 +7,12 @@ class Klomper(MycroftSkill):
 
     @intent_file_handler('klomper-occupied.intent')
     def handle_occupied(self, message):
-        self.log.info("set red light", message)
+        self.log.warning("set red light", message)
         self.speak_dialog('klomper-occupied')
 
     @intent_file_handler('klomper-free.intent')
     def handle_free(self, message):
-        self.log.info("set green light", message)
+        self.log.warning("set green light", message)
         self.speak_dialog('klomper-free')
 
 
